@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Survey Form</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .container {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      max-width: 600px;
+      width: 100%;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: 500;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      margin-top: 0.3rem;
+      padding: 0.6rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    .radio-group, .checkbox-group {
+      margin-top: 0.5rem;
+    }
+
+    .radio-group label,
+    .checkbox-group label {
+      display: inline-block;
+      margin-right: 1rem;
+      font-weight: normal;
+    }
+
+    .radio-group input[type="radio"],
+    .checkbox-group input[type="checkbox"] {
+      vertical-align: top;
+      margin-right: 6px;
+      transform: translateX(-15px);
+    }
+
+    button {
+      margin-top: 1.5rem;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 0.8rem 1.2rem;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    @media (max-width: 619px) {
+      body {
+        padding: 1rem;
+      }
+
+      .container {
+        padding: 1.2rem;
+        border-radius: 10px;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+      }
+
+      label {
+        font-size: 0.95rem;
+      }
+
+      input, select, textarea {
+        font-size: 0.95rem;
+        padding: 0.5rem;
+        width: 90%;
+      }
+
+      .radio-group label,
+      .checkbox-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+
+      .radio-group input[type="radio"]
+       {
+        transform: translateY(1rem);
+      }
+      .checkbox-group input[type="checkbox"]{
+        transform: translateY(1.2rem);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Student Satisfaction Survey</h2>
+    <form>
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" placeholder="example@mail.com" required>
+
+      <label for="course">Which course are you enrolled in?</label>
+      <select id="course" name="course">
+        <option value="">-- Select --</option>
+        <option value="btech">B.Tech</option>
+        <option value="mca">MCA</option>
+        <option value="bca">BCA</option>
+        <option value="bba">BBA</option>
+        <option value="other">OTHER</option>
+      </select>
+
+      <label>How satisfied are you with the teaching quality?</label>
+      <div class="radio-group">
+        <label><input type="radio" name="satisfaction" value="very-satisfied"> 😊 Very Satisfied</label>
+        <label><input type="radio" name="satisfaction" value="satisfied"> 🙂 Satisfied</label>
+        <label><input type="radio" name="satisfaction" value="neutral"> 😐 Neutral</label>
+        <label><input type="radio" name="satisfaction" value="unsatisfied"> 🙁 Unsatisfied</label>
+      </div>
+
+      <label>What facilities do you use regularly?</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="facility" value="library"> 📚 Library</label>
+        <label><input type="checkbox" name="facility" value="lab"> 💻 Computer Lab</label>
+        <label><input type="checkbox" name="facility" value="wifi"> 📶 Wi-Fi</label>
+        <label><input type="checkbox" name="facility" value="canteen"> 🍔 Canteen</label>
+      </div>
+
+      <label for="feedback">Any additional feedback?</label>
+      <textarea id="feedback" name="feedback" rows="4" placeholder="Write your thoughts here..."></textarea>
+
+      <button type="submit">Submit Survey</button>
+    </form>
+  </div>
+</body>
+</html>
