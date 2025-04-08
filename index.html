@@ -129,7 +129,9 @@
 <body>
   <div class="container">
     <h2>Student Satisfaction Survey</h2>
-    <form name="survay" netlify>
+    <form name="survay"  method="POST"
+    data-netlify-recaptcha="true"
+    data-netlify="true">
       <label for="name">Full Name:</label>
       <input type="text" id="name" name="name" placeholder="Enter your name" required>
 
@@ -164,7 +166,7 @@
 
       <label for="feedback">Any additional feedback?</label>
       <textarea id="feedback" name="feedback" rows="4" placeholder="Write your thoughts here..."></textarea>
-
+      <div data-netlify-recaptcha="true"></div>
       <button type="submit">Submit Survey</button>
     </form>
   </div>
