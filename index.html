@@ -5,20 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Survey Form</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Segoe UI', sans-serif;
       background: #f4f4f4;
+      margin: 0;
+      padding: 0;
       display: flex;
       justify-content: center;
-      padding: 2rem;
     }
 
     .container {
       background: #fff;
-      padding: 2rem;
+      padding: 1.5rem;
       border-radius: 12px;
       max-width: 600px;
       width: 100%;
+      margin: 1rem;
       box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     }
 
@@ -34,7 +40,10 @@
       font-weight: 500;
     }
 
-    input, select, textarea {
+    input[type="text"],
+    input[type="email"],
+    select,
+    textarea {
       width: 100%;
       margin-top: 0.3rem;
       padding: 0.6rem;
@@ -43,78 +52,77 @@
       font-size: 1rem;
     }
 
-    .radio-group, .checkbox-group {
+    .radio-group,
+    .checkbox-group {
       margin-top: 0.5rem;
+      display: flex;
     }
 
     .radio-group label,
     .checkbox-group label {
-      display: inline-block;
-      margin-right: 1rem;
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.5rem;
       font-weight: normal;
+      font-size: 0.95rem;
     }
 
-    .radio-group input[type="radio"],
-    .checkbox-group input[type="checkbox"] {
-      vertical-align: top;
-      margin-right: 6px;
-      transform: translateX(-15px);
+    .radio-group input,
+    .checkbox-group input {
+      margin-right: 0.5rem;
+      transform: scale(1.1);
+
+    }
+
+    textarea {
+      resize: vertical;
     }
 
     button {
       margin-top: 1.5rem;
-      background-color: #4CAF50;
+      background-color: #000000;
       color: white;
       border: none;
       padding: 0.8rem 1.2rem;
       font-size: 1rem;
-      border-radius: 6px;
+      border-radius: 8px;
       cursor: pointer;
       width: 100%;
+      font-size: 16px;
     }
 
     button:hover {
-      background-color: #45a049;
+      background-color: #252625;
     }
 
     @media (max-width: 619px) {
-      body {
-        padding: 1rem;
-      }
-
-      .container {
-        padding: 1.2rem;
-        border-radius: 10px;
-      }
-
       h2 {
-        font-size: 1.4rem;
-        margin-bottom: 1rem;
+        font-size: 1.3rem;
       }
 
       label {
         font-size: 0.95rem;
       }
 
-      input, select, textarea {
-        font-size: 0.95rem;
-        padding: 0.5rem;
-        width: 90%;
+      input, select, textarea, button {
+        font-size: 1rem;
       }
 
       .radio-group label,
       .checkbox-group label {
-        display: block;
-        margin-bottom: 0.5rem;
+        font-size: 0.95rem;
       }
 
-      .radio-group input[type="radio"]
-       {
-        transform: translateY(1rem);
+      .container {
+        margin: 0.5rem;
+        padding: 1rem;
+        border-radius: 10px;
       }
-      .checkbox-group input[type="checkbox"]{
-        transform: translateY(1.2rem);
-      }
+      .radio-group,
+    .checkbox-group {
+      margin-top: 0.5rem;
+      display: block;
+    }
     }
   </style>
 </head>
@@ -129,7 +137,7 @@
       <input type="email" id="email" name="email" placeholder="example@mail.com" required>
 
       <label for="course">Which course are you enrolled in?</label>
-      <select id="course" name="course">
+      <select id="course" name="course" required>
         <option value="">-- Select --</option>
         <option value="btech">B.Tech</option>
         <option value="mca">MCA</option>
@@ -140,7 +148,7 @@
 
       <label>How satisfied are you with the teaching quality?</label>
       <div class="radio-group">
-        <label><input type="radio" name="satisfaction" value="very-satisfied"> 😊 Very Satisfied</label>
+        <label><input type="radio" name="satisfaction" value="very-satisfied" required> 😊 Very Satisfied</label>
         <label><input type="radio" name="satisfaction" value="satisfied"> 🙂 Satisfied</label>
         <label><input type="radio" name="satisfaction" value="neutral"> 😐 Neutral</label>
         <label><input type="radio" name="satisfaction" value="unsatisfied"> 🙁 Unsatisfied</label>
