@@ -19,7 +19,7 @@
     }
 
     .container {
-      background: #fff;
+      background: #ffffff;
       padding: 1.5rem;
       border-radius: 12px;
       max-width: 600px;
@@ -129,7 +129,8 @@
 <body>
   <div class="container">
     <h2>Student Satisfaction Survey</h2>
-    <form>
+    <form name="survay" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="survay">
       <label for="name">Full Name:</label>
       <input type="text" id="name" name="name" placeholder="Enter your name" required>
 
